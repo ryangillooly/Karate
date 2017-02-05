@@ -1,0 +1,128 @@
+﻿<Window x:Name="app1" x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" SizeToContent="WidthAndHeight" Background="WhiteSmoke">
+    <Grid x:Name="grid1" Margin="0" Width="1274" Height="771">
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Resources/backgroundImage.jpg"/>
+        </Grid.Background>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="400"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="redLabel_Grid" Height="400" Width="460" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,820,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="250"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="redScore_Label" Content="0" Grid.Row="1" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="250" Width="460" FontSize="150"/>
+        </Grid>
+        <Grid x:Name="blueLabel_Grid" Height="400" Width="460" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="250"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="blueScore_Label" Content="0" Grid.Row="1" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="150" RenderTransformOrigin="0.5,0.5"/>
+        </Grid>
+        <Grid x:Name="lkaImage_Grid" HorizontalAlignment="Left" Height="210" Margin="460,0,0,0" VerticalAlignment="Top" Width="360" Background="White">
+            <Image x:Name="lkaImage_Image" Source="pack://application:,,,/Resources/LKA.jpg"/>
+        </Grid>
+        <Grid x:Name="blueButtons_Grid" Height="320" Margin="0,0,0,-370" Width="454" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="227"/>
+                <ColumnDefinition Width="227"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160"/>
+                <RowDefinition Height="160"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="blueChudanKick_Button" Content="" BorderBrush="{x:Null}" Click="chudanKickBlue_Button_Click" Grid.Column="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Resources/Chudan_Kick_Left_T.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="bluePunch_Button" Content="" BorderBrush="{x:Null}" Click="punchBlue_Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Resources/karate-punch-icon-left.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="blueJodanKick_button" Content="" Grid.Row="1" Grid.Column="1" BorderBrush="{x:Null}" Click="jodanKickBlue_Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Resources/Jodan_Kick_Left_T.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="blueSweep_Button" Content="Sweep" Grid.Row="1" Height="160" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="227" BorderBrush="{x:Null}" Click="sweepBlue_Button_Click"/>
+        </Grid>
+        <Grid x:Name="redButtons_Grid" HorizontalAlignment="Left" Height="320" Margin="0,451,0,-370" VerticalAlignment="Top" Width="450">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="225"/>
+                <ColumnDefinition Width="225"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160"/>
+                <RowDefinition Height="160"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="redChudanKick_Button" Content="" BorderBrush="{x:Null}" Click="chudanKickRed_Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Resources/Chudan_Kick_Right_T.png" Stretch="Uniform"/>
+                </Button.Background>
+
+            </Button>
+            <Button x:Name="redPunch_Button" Content="" BorderBrush="{x:Null}" Click="punchRed_Button_Click" Grid.Column="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Resources/karate-punch-icon.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="redJodanKick_button" Content="" Width="225" Grid.Row="1" Height="160" BorderBrush="{x:Null}" Click="jodanKickRed_Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Resources/Jodan_Kick_Right_T.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="redSweep_Button" Content="Sweep" Width="225" Grid.Row="1" Height="160" Background="{x:Null}" Grid.Column="1" BorderBrush="{x:Null}" Click="sweepRed_Button_Click"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="150" Margin="450,621,0,-370" VerticalAlignment="Top" Width="370">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="123.33"/>
+                <ColumnDefinition Width="123.33"/>
+                <ColumnDefinition Width="123.33"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="startTimer_Button" Content="" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="124" Height="75" Click="startTimer_Button_Click" BorderThickness="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/button_start.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="stopTimer_Button" Content="" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="123" Grid.Column="1" Height="75" Click="stopTimer_Button_Click" BorderThickness="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/button_stop-reset.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="pauseTimer_Button" Content="" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="123" Grid.Column="2" Height="75" Click="pauseTimer_Button_Click" BorderThickness="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/button_pause.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Label x:Name="label" Content="1&#xD;&#xA;" HorizontalAlignment="Left" Margin="24,4,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" Height="25" Grid.Row="1" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+            <Label x:Name="label_Copy" Content="3" HorizontalAlignment="Left" Margin="55,3,0,6" Grid.Column="1" Foreground="White" Background="{x:Null}" Grid.Row="1" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+            <Label x:Name="label_Copy1" Content="5" HorizontalAlignment="Left" Margin="88,3,0,6" Grid.Column="2" Background="{x:Null}" Foreground="White" Grid.Row="1" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+            <Label x:Name="label_Copy2" Content="2" HorizontalAlignment="Left" Margin="99,4,0,5" Foreground="White" Background="{x:Null}" Grid.Row="1" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+            <Label x:Name="label_Copy3" Content="4" HorizontalAlignment="Left" Margin="11,3,0,6" Grid.Column="2" Foreground="White" Background="{x:Null}" Grid.Row="1" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        </Grid>
+        <Grid x:Name="timer_Grid" HorizontalAlignment="Left" Height="155" Margin="460,210,0,0" VerticalAlignment="Top" Width="360" Background="Black">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="timerLabel" Content="00:00" Width="360" Background="{x:Null}" Foreground="White" FontSize="120" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" Margin="0,-15,0,0"/>
+        </Grid>
+        <Slider x:Name="slider" HorizontalAlignment="Left" Height="20" Margin="475,645,0,-264" VerticalAlignment="Top" Width="325" Maximum="5" Minimum="1"/>
+    </Grid>
+</Window>
