@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" SizeToContent="WidthAndHeight" Background="WhiteSmoke">
+        Title="MainWindow" Height="800" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" SizeToContent="WidthAndHeight" Background="WhiteSmoke" WindowStyle="None">
     <Grid x:Name="grid1" Margin="0" Width="1274" Height="771">
         <Grid.Background>
             <ImageBrush ImageSource="pack://application:,,,/Resources/backgroundImage.jpg"/>
@@ -48,6 +48,14 @@
                     </LinearGradientBrush>
                 </Image.OpacityMask>
             </Image>
+            <Button x:Name="button" Content="" HorizontalAlignment="Left" Margin="83,21,0,0" VerticalAlignment="Top" Width="277" Height="179" BorderThickness="0" Click="CloseApp_Click" Foreground="#FFF3C4C4" BorderBrush="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </Grid>
         <Grid x:Name="blueButtons_Grid" Height="320" Margin="0,0,0,-370" Width="454" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             <Grid.ColumnDefinitions>

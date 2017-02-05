@@ -27,13 +27,7 @@ namespace WpfApplication1
         private int setTime;
         private DispatcherTimer timer1;
 
-
-
-
-      
-
-
-       public MainWindow()
+        public MainWindow()
 		{
 			InitializeComponent();
             Loaded += MainWindow_Loaded;
@@ -240,6 +234,11 @@ namespace WpfApplication1
                 blueScore = Convert.ToInt32(blueScore_Label.Content) + 3;
                 blueScore_Label.Content = Convert.ToString(blueScore);
             }
+        }
+
+        private void CloseApp_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
 
 
