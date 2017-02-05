@@ -17,20 +17,37 @@
         </Grid.RowDefinitions>
         <Grid x:Name="redLabel_Grid" Height="400" Width="460" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,820,0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="250"/>
+                <RowDefinition Height="400"/>
             </Grid.RowDefinitions>
-            <Label x:Name="redScore_Label" Content="0" Grid.Row="1" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="250" Width="460" FontSize="150"/>
+            <Label x:Name="redScore_Label" Content="0" Background="{x:Null}" Width="460" FontSize="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </Grid>
         <Grid x:Name="blueLabel_Grid" Height="400" Width="460" VerticalAlignment="Top" HorizontalAlignment="Right">
             <Grid.RowDefinitions>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="250"/>
+                <RowDefinition Height="400"/>
             </Grid.RowDefinitions>
-            <Label x:Name="blueScore_Label" Content="0" Grid.Row="1" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="150" RenderTransformOrigin="0.5,0.5"/>
+            <Label x:Name="blueScore_Label" Content="0" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="200" RenderTransformOrigin="0.5,0.5"/>
         </Grid>
-        <Grid x:Name="lkaImage_Grid" HorizontalAlignment="Left" Height="210" Margin="460,0,0,0" VerticalAlignment="Top" Width="360" Background="White">
-            <Image x:Name="lkaImage_Image" Source="pack://application:,,,/Resources/LKA.jpg"/>
+        <Grid x:Name="lkaImage_Grid" HorizontalAlignment="Left" Height="210" Margin="420,0,0,0" VerticalAlignment="Top" Width="440">
+            <Image x:Name="lkaImage_Image" Source="Resources/Untitled-2.jpg" Stretch="Fill">
+                <Image.OpacityMask>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="White" Offset="0.506"/>
+                        <GradientStop/>
+                        <GradientStop Offset="1"/>
+                        <GradientStop Color="#C8FFFFFF" Offset="0.647"/>
+                        <GradientStop Color="#0CFFFFFF" Offset="0.056"/>
+                        <GradientStop Color="#2BFFFFFF" Offset="0.916"/>
+                    </LinearGradientBrush>
+                </Image.OpacityMask>
+            </Image>
         </Grid>
         <Grid x:Name="blueButtons_Grid" Height="320" Margin="0,0,0,-370" Width="454" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             <Grid.ColumnDefinitions>
@@ -48,7 +65,7 @@
             </Button>
             <Button x:Name="bluePunch_Button" Content="" BorderBrush="{x:Null}" Click="punchBlue_Button_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="pack://application:,,,/Resources/karate-punch-icon-left.png" Stretch="Uniform"/>
+                    <ImageBrush ImageSource="Resources/karate-punch-icon-left.png" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
             <Button x:Name="blueJodanKick_button" Content="" Grid.Row="1" Grid.Column="1" BorderBrush="{x:Null}" Click="jodanKickBlue_Button_Click">
@@ -117,11 +134,11 @@
             <Label x:Name="label_Copy2" Content="2" HorizontalAlignment="Left" Margin="99,4,0,5" Foreground="White" Background="{x:Null}" Grid.Row="1" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold"/>
             <Label x:Name="label_Copy3" Content="4" HorizontalAlignment="Left" Margin="11,3,0,6" Grid.Column="2" Foreground="White" Background="{x:Null}" Grid.Row="1" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold"/>
         </Grid>
-        <Grid x:Name="timer_Grid" HorizontalAlignment="Left" Height="155" Margin="460,210,0,0" VerticalAlignment="Top" Width="360" Background="Black">
+        <Grid x:Name="timer_Grid" HorizontalAlignment="Left" Height="241" Margin="420,210,0,-50" VerticalAlignment="Top" Width="440" Background="Black">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="timerLabel" Content="00:00" Width="360" Background="{x:Null}" Foreground="White" FontSize="120" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" Margin="0,-15,0,0"/>
+            <Label x:Name="timerLabel" Content="00:00" Background="{x:Null}" Foreground="#FFFBFBFB" FontSize="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" Padding="5,5,5,0" RenderTransformOrigin="0.5,0.5" Margin="0,-30,0,0"/>
         </Grid>
         <Slider x:Name="slider" HorizontalAlignment="Left" Height="20" Margin="475,645,0,-264" VerticalAlignment="Top" Width="325" Maximum="5" Minimum="1"/>
     </Grid>

@@ -131,6 +131,15 @@
     <Resource Include="Resources\button_start.png" />
     <Resource Include="Resources\button_stop-reset.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Untitled-2_burned.png" />
+    <Resource Include="Resources\Untitled-2.jpg" />
+    <Resource Include="Resources\LKA-mod - Copy.jpg" />
+    <Resource Include="Resources\buzzer.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Resources\countdownbeep.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

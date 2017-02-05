@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Media;
 
 namespace WpfApplication1
 {
@@ -26,6 +27,12 @@ namespace WpfApplication1
         private int setTime;
         private DispatcherTimer timer1;
 
+
+
+
+      
+
+
        public MainWindow()
 		{
 			InitializeComponent();
@@ -34,7 +41,6 @@ namespace WpfApplication1
             timer1 = new DispatcherTimer();
             timer1.Interval = new TimeSpan(0, 0, 1);
             timer1.Tick += timer1_tick;
-
 		}
 
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -65,9 +71,11 @@ namespace WpfApplication1
                 currentState = "running";
             }
 
-            time = (Convert.ToInt32(slider.Value)*60)+1;
-            //time = 6;
+            //time = (Convert.ToInt32(slider.Value)*60)+1;
+            time = 8;
             setTime = time;
+ 
+
             timer1.Start();
         }
 
@@ -126,11 +134,21 @@ namespace WpfApplication1
                         time--;
                         timerLabel.Content = string.Format("0{0}:0{1}", time / 60, time % 60);
 
-                        if (time == 0)
+                        if(time == 0)
                         {
                             timer1.Stop();
-                            MessageBox.Show("Yame");
+                        //  MessageBox.Show("Yame");
+                            var soundPlayer = new SoundPlayer();
+                            soundPlayer.SoundLocation = @"\\RGCLOUD\Ryan\DevProjects\KarateScoreboard\KarateScoreboard\Resources\buzzer.wav";
+                            soundPlayer.PlaySync();
                         }
+                        else
+                        {
+                            var soundPlayer = new SoundPlayer();
+                            soundPlayer.SoundLocation = @"\\RGCLOUD\Ryan\DevProjects\KarateScoreboard\KarateScoreboard\Resources\countdownbeep.wav";
+                            soundPlayer.PlaySync();
+                        }
+                        
 
                     }
                     else
